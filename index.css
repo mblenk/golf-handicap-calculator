@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+/* Background image */
+.background {
+    background: url('images/golf-course-image.jpeg');
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+}
+.background::before {
+    content:"";
+    position:absolute;
+    top: 0%;
+    right: 0%;
+    bottom: -100%; /* NEEDS ADJUSTING ONCE PAGE COMPLETE */
+    left: 0%;
+    background-color:rgba(0,0,0,0.75);
+    background-attachment:fixed;
+}
+
+/* General Classes */
+.text-color {
+    color:white;
+}
+
+/* Headings */
+.header {
+    position: relative;
+    color: #ffffff;  
+    line-height: 0.9;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+}
+.header h1 { 
+    font-size: 75px;
+}
+.header h3 { 
+    font-size: 25px;
+}
+
+/* Input Form */
+.content {
+    position:relative;
+    margin: 0px 0px 0px 20px;
+    display:flex;
+}
+
+.table {
+    max-width: 600px;
+    margin: 25px 50px 0px 20px;
+    width:50%;
+}
+.table thead {
+    font-size:20px;
+    color:white;
+    border:none;
+    text-align:center;
+    font-family: 'Quicksand', sans-serif;  
+}
+.table tr {
+    border:0;
+}
+.table input {
+    width:100px;
+    height:30px;
+}
+
+/* Instructions */
+.instructions {
+    margin:25px 20px 0px 20px;
+    /* width:50%; */
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* Responsive Media */
+@media screen and (max-width:800px) {
+    .background {
+        background: url('images/golf-course-mobile.jpeg');
+        background-size:cover;
+        background-repeat:no-repeat;
+        background-attachment:fixed;
+    }
+    .background::before {
+        content:"";
+        position:absolute;
+        top: 0%;
+        right: 0%;
+        bottom: -100%; /* NEEDS ADJUSTING ONCE PAGE COMPLETE */
+        left: 0%;
+        background-color:rgba(0,0,0,0.75);
+        background-attachment:fixed;
+    }
+    .content {
+        flex-direction:column;
+        width:100%;
+        margin:20px 10px 20px 10px;
+    }
+    .table {
+        max-width:90%;
+    }
+    .form {
+        overflow-x: auto;
+    }
+    .instructions {
+        font-family: 'Quicksand', sans-serif;
+    }
+}
+
+
