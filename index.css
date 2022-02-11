@@ -14,7 +14,7 @@
     right: 0%;
     bottom: -100%; /* NEEDS ADJUSTING ONCE PAGE COMPLETE */
     left: 0%;
-    background-color:rgba(0,0,0,0.75);
+    background-color:rgba(0,0,0,0.80);
     background-attachment:fixed;
 }
 
@@ -47,7 +47,7 @@
 
 .table {
     max-width: 600px;
-    margin: 25px 50px 0px 20px;
+    margin: 25px 50px 0px 50px;
     width:50%;
 }
 .table thead {
@@ -57,12 +57,19 @@
     text-align:center;
     font-family: 'Quicksand', sans-serif;  
 }
-.table tr {
+/* .table tr {
     border:0;
-}
+} */
 .table input {
     width:100px;
     height:30px;
+}
+.buttons {
+    display:flex;
+    margin: 0px 10px 50px 50px;
+}
+.submit {
+    margin: 0px 10px 0px 0px;
 }
 
 /* Instructions */
@@ -70,6 +77,7 @@
     margin:25px 20px 0px 20px;
     /* width:50%; */
     font-family: 'Quicksand', sans-serif;
+    font-size:15px;
 }
 
 /* Responsive Media */

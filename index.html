@@ -14,30 +14,20 @@
 <body>
     <section class="background">
         <div class="header">
-            <h1>Golf Handicap Calculator</h1>
+            <h1 class="test">Golf Handicap Calculator</h1>
             <h3>Use your latest scores to calculate your current handicap!</h3>
         </div>
         <div class="content">
             <div class="instructions">
-                <h3 class="text-color">Instructions</h3>
-                <p class="text-color">Input your recent scores along with the course and slope rating for each course you have played at. If you are not sure of the ratings for the courses you have played at, please use the link below to access the database provided by the R&A: <br> <a href="https://www.randa.org/worldhandicapsystem/Lookup" target="_blank" class="text-color">R&A Course Rating and Slope Database</a></p>
+                <h3 class="text-color" style="text-decoration:underline">Instructions</h3>
+                <p class="text-color">Input your recent scores along with the course and slope rating for each course you have played at. If you are not sure of the ratings for the courses you have played at, please use the link below to access the database provided by the R&A: <br> <a href="https://www.randa.org/worldhandicapsystem/Lookup" target="_blank" class="text-color link">R&A Course Rating and Slope Database</a></p>
                 <p class="text-color">To calculate an accurate handicap you must input at least 54 holes of scores (three 18 hole rounds or six 9 hole rounds)</p>
-                <p class="text-color">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-
-                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+                <p class="text-color">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                <p class="text-color">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                
             </div>
-            <form class="form">
+            <form id="handicap-calculator" class="form">
                 <table class="table">
-                    <colgroup>
-                        <col span="1" class="column">
-                        <col span="1" class="column">
-                        <col span="1" class="column">
-                        <col span="1" class="column">
-                        <col span="1" class="column">
-                        <col span="1" class="column">
-                        <col span="1" class="delete">
-                    </colgroup>
-                    
                     <thead>
                         <tr>
                             <th>Round Number</th>
@@ -49,79 +39,39 @@
                             <th>Clear Values</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="cells">
                         <tr>
                             <td>
                                 <h5 style="color:white">1</h5>
                             </td>
                             <td>
-                                <input type="text">
+                                <input type="text" name="round1[]" placeholder="90">
                             </td>
                             <td>
-                                <input type="text">
+                                <input type="text" name="round1[]" placeholder="">
                             </td>
                             <td>
-                                <input type="text">
+                                <input type="text" name="round1[]" placeholder="113">
                             </td>
                             <td>
-                                <input type="text">
+                                <input type="text" name="round1[]" placeholder="72">
                             </td>
                             <td>
-                                <input type="text">
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-danger btn-sm">Clear</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h5 style="color:white;">2</h5>
-                            </td>
-                            <td>
-                                <input type="text">
-                            </td>
-                            <td>
-                                <input type="text">
-                            </td>
-                            <td>
-                                <input type="text">
-                            </td>
-                            <td>
-                                <input type="text">
-                            </td>
-                            <td>
-                                <input type="text">
+                                <input type="text" name="round1[]" placeholder="">
                             </td>
                             <td>
                                 <button type="button" class="btn btn-danger btn-sm">Clear</button>
                             </td>
                         </tr>
-                        <tr>
-                            <td>
-                                <h5 style="color:white">3</h5>
-                            </td>
-                            <td>
-                                <input type="text">
-                            </td>
-                            <td>
-                                <input type="text">
-                            </td>
-                            <td>
-                                <input type="text">
-                            </td>
-                            <td>
-                                <input type="text">
-                            </td>
-                            <td>
-                                <input type="text">
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-danger btn-sm">Clear</button>
-                            </td>
-                        </tr>
+                        
                     </tbody>
                 </table>
+                <div class="buttons">
+                    <button type="submit" class="btn btn-primary btn-lg submit">Get your Handicap!</button>
+                    <button type="button" class="btn btn-secondary btn-lg">Clear Table</button>
+                </div>
             </form>
+            
             
 
 
@@ -138,6 +88,11 @@
         </div> 
     
     </section>
+
+    <script type="module" src="scripts/differential-calculator.js"></script>
+    <script type="module" src="scripts/test.js"></script>
+    <script type="module" src="scripts/table-render.js"></script>
+    <script type="module" src="scripts/oneDecimalPlace.js"></script>
 </body>
 
 </html>
