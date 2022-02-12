@@ -67,6 +67,7 @@
 .buttons {
     display:flex;
     margin: 0px 10px 50px 50px;
+    align-items: center;
 }
 .submit {
     margin: 0px 10px 0px 0px;
