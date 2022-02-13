@@ -20,10 +20,11 @@
         <div class="content">
             <div class="instructions">
                 <h3 class="text-color" style="text-decoration:underline">Instructions</h3>
-                <p class="text-color">Input your recent scores along with the course and slope rating for each course you have played at. If you are not sure of the ratings for the courses you have played at, please use the link below to access the database provided by the R&A: <br> <a href="https://www.randa.org/worldhandicapsystem/Lookup" target="_blank" class="text-color link">R&A Course Rating and Slope Database</a></p>
-                <p class="text-color">To calculate an accurate handicap you must input at least 54 holes of scores (three 18 hole rounds or six 9 hole rounds)</p>
-                <p class="text-color">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                <p class="text-color">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                <p class="text-color">Input your recent scores along with the course rating and slope rating for each course you have played at. If you enter a 9 hole score, you should enter the course rating for the 9 holes you have played, and not the rating for the full 18 holes. If you are not sure of the ratings for the courses you have played at, please use the link below to access the database provided by The R&A: <br> <a href="https://www.randa.org/worldhandicapsystem/Lookup" target="_blank" class="text-color link">R&A Course Rating and Slope Database</a></p>
+                <p class="text-color">To calculate an accurate handicap you must input at least 54 holes of scores, made up of either 18 hole or 9 hole rounds. Enter each round individually, please don't provide an 18 hole and 9 hole score in the same line otherwise the 9 hole score will be ignored. If you know the value of the playing condition adjustment then enter this in the field provided. If you don't know this value, the calculator will default to "0". </p>
+                <p class="text-color">Although you can calculate a handicap index with just 54 holes of scoring data, the more data you provide the more accurate your handicap will be. Up to 20 scores can be submitted and for each one a "Score Differential" will be calculated. For 9 hole rounds, the differential for each set of 9 holes will be calculated and then two 9 hole rounds will be combined into one 18 hole differential. The handicap index is then calculated as per the table below:</p>
+                <img src="images/WHSCalculations.png" alt="WHSCalculations"></img>
+                
                 
             </div>
             <form id="handicap-calculator" class="form">
@@ -45,30 +46,32 @@
                                 <h5 style="color:white">1</h5>
                             </td>
                             <td>
-                                <input type="text" name="round1[]" placeholder="90">
+                                <input type="text" class="form-input" name="round1[]" placeholder="90">
                             </td>
                             <td>
-                                <input type="text" name="round1[]" placeholder="">
+                                <input type="text" class="form-input" name="round1[]" placeholder="">
                             </td>
                             <td>
-                                <input type="text" name="round1[]" placeholder="113">
+                                <input type="text" class="form-input" name="round1[]" placeholder="113">
                             </td>
                             <td>
-                                <input type="text" name="round1[]" placeholder="72">
+                                <input type="text" class="form-input" name="round1[]" placeholder="72">
                             </td>
                             <td>
-                                <input type="text" name="round1[]" placeholder="">
+                                <input type="text" class="form-input" name="round1[]" placeholder="">
                             </td>
                             <td>
-                                <button type="button" class="btn btn-danger btn-sm">Clear</button>
+                                <button type="button" id="1" class="btn btn-danger btn-sm">Clear</button>
                             </td>
                         </tr>  
                     </tbody>
                 </table>
                 <div class="buttons">
                     <button type="submit" class="btn btn-primary btn-lg submit">Get your Handicap!</button>
-                    <button type="button" class="btn btn-secondary btn-lg">Clear Table</button>
-                    <h3 class="text-color" id="final-index" style="margin-left:20px"></h3>
+                    <button type="button" id="clear-table" class="btn btn-secondary btn-lg">Clear Table</button>   
+                </div>
+                <div class="final-index">
+                    <h3 id="final-index"></h3>
                 </div>
             </form>    
         </div> 
@@ -80,6 +83,8 @@
     <script type="module" src="scripts/oneDecimalPlace.js"></script>
     <script type="module" src="scripts/handicap-index.js"></script>
     <script type="module" src="scripts/9-hole-combination.js"></script>
+    <script type="module" src="scripts/average-calculator.js"></script>
+    <script type="module" src="scripts/clear-buttons.js"></script>
 </body>
 
 </html>

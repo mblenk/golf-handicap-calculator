@@ -66,11 +66,19 @@
 }
 .buttons {
     display:flex;
-    margin: 0px 10px 50px 50px;
+    margin: 0px 10px 10px 50px;
     align-items: center;
+    
 }
 .submit {
     margin: 0px 10px 0px 0px;
+}
+.final-index {
+    color:white;
+    margin: 10px 0px 50px 50px;
+    text-decoration: underline;
+    font-size:20px;
+    font-family: 'Quicksand', sans-serif;
 }
 
 /* Instructions */
@@ -79,6 +87,9 @@
     /* width:50%; */
     font-family: 'Quicksand', sans-serif;
     font-size:15px;
+}
+.content img {
+    max-width:100%;
 }
 
 /* Responsive Media */
@@ -94,7 +105,7 @@
         position:absolute;
         top: 0%;
         right: 0%;
-        bottom: -100%; /* NEEDS ADJUSTING ONCE PAGE COMPLETE */
+        bottom: -1000%; /* NEEDS ADJUSTING ONCE PAGE COMPLETE */
         left: 0%;
         background-color:rgba(0,0,0,0.75);
         background-attachment:fixed;

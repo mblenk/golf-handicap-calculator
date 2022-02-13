@@ -12,22 +12,24 @@ rounds.forEach(round => {
             <h5 style="color:white">${round}</h5>
         </td>
         <td>
-            <input type="text" name="round${round}[]">
+            <input type="text" class="form-input" name="round${round}[]">
         </td>
         <td>
-            <input type="text" name="round${round}[]">
+            <input type="text" class="form-input" name="round${round}[]">
         </td>
         <td>
-            <input type="text" name="round${round}[]">
+            <input type="text" class="form-input" name="round${round}[]">
         </td>
         <td>
-            <input type="text" name="round${round}[]">
+            <input type="text" class="form-input" name="round${round}[]">
         </td>
         <td>
-            <input type="text" name="round${round}[]">
+            <input type="text" class="form-input" name="round${round}[]">
         </td>
         <td>
-            <button type="button" class="btn btn-danger btn-sm">Clear</button>
+            <button type="button" id="${round}" class="btn btn-danger btn-sm">Clear</button>
         </td>
     </tr>`
 })
+
+// ,16,17,18,19,20
