@@ -10,14 +10,12 @@ handicapCalculator.addEventListener('submit', (e) => {
     const finalDifferentials = eighteenHoleDiffs.concat(combinedDiffs)
     
     finalDifferentials.sort((a,b) => a - b)
-    console.log(finalDifferentials)
     
     const diffsCount = finalDifferentials.length
     let handicapIndex = 0
 
-    // Need error for less than 3
-
     const finalIndex = document.getElementById('final-index')
+    const modalIndex = document.getElementById('modal-index')
 
     if(diffsCount < 3){
         finalIndex.innerText = '54 holes of scores are required'
@@ -69,5 +67,6 @@ handicapCalculator.addEventListener('submit', (e) => {
     }
 
     finalIndex.innerText = `Your Handicap Index is: ${handicapIndex}`
+    modalIndex.innerText = `Your Handicap Index is: ${handicapIndex}`
 
 })

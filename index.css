@@ -6,16 +6,15 @@
     background-size:cover;
     background-repeat:no-repeat;
     background-attachment:fixed;
+    height:100%;
+    width:100%;
 }
 .background::before {
     content:"";
-    position:absolute;
-    top: 0%;
-    right: 0%;
-    bottom: -100%; /* NEEDS ADJUSTING ONCE PAGE COMPLETE */
-    left: 0%;
+    position:fixed;
+    width:inherit;
+    height:inherit;
     background-color:rgba(0,0,0,0.80);
-    background-attachment:fixed;
 }
 
 /* General Classes */
@@ -55,6 +54,7 @@
     color:white;
     border:none;
     text-align:center;
+    text-decoration: underline;
     font-family: 'Quicksand', sans-serif;  
 }
 /* .table tr {
@@ -92,6 +92,44 @@
     max-width:100%;
 }
 
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-box {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close-modal {
+    color:darkred;
+    background:transparent;
+    border-color: transparent;
+  }
+  
+  /* .close-modal:hover,
+  .close-modal:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  } */
+
+
 /* Responsive Media */
 @media screen and (max-width:800px) {
     .background {
@@ -99,14 +137,14 @@
         background-size:cover;
         background-repeat:no-repeat;
         background-attachment:fixed;
+        height:100%;
+        width:100%;
     }
     .background::before {
         content:"";
-        position:absolute;
-        top: 0%;
-        right: 0%;
-        bottom: -1000%; /* NEEDS ADJUSTING ONCE PAGE COMPLETE */
-        left: 0%;
+        position:fixed;
+        height:inherit;
+        width:inherit;
         background-color:rgba(0,0,0,0.75);
         background-attachment:fixed;
     }

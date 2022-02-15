@@ -6,12 +6,13 @@
 
     <link rel="stylesheet" href="index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     <title>Golf Handicap Calculator</title>
 </head>
 
-<body>
+<body class="test-box">
     <section class="background">
         <div class="header">
             <h1 class="test">Golf Handicap Calculator</h1>
@@ -23,9 +24,7 @@
                 <p class="text-color">Input your recent scores along with the course rating and slope rating for each course you have played at. If you enter a 9 hole score, you should enter the course rating for the 9 holes you have played, and not the rating for the full 18 holes. If you are not sure of the ratings for the courses you have played at, please use the link below to access the database provided by The R&A: <br> <a href="https://www.randa.org/worldhandicapsystem/Lookup" target="_blank" class="text-color link">R&A Course Rating and Slope Database</a></p>
                 <p class="text-color">To calculate an accurate handicap you must input at least 54 holes of scores, made up of either 18 hole or 9 hole rounds. Enter each round individually, please don't provide an 18 hole and 9 hole score in the same line otherwise the 9 hole score will be ignored. If you know the value of the playing condition adjustment then enter this in the field provided. If you don't know this value, the calculator will default to "0". </p>
                 <p class="text-color">Although you can calculate a handicap index with just 54 holes of scoring data, the more data you provide the more accurate your handicap will be. Up to 20 scores can be submitted and for each one a "Score Differential" will be calculated. For 9 hole rounds, the differential for each set of 9 holes will be calculated and then two 9 hole rounds will be combined into one 18 hole differential. The handicap index is then calculated as per the table below:</p>
-                <img src="images/WHSCalculations.png" alt="WHSCalculations"></img>
-                
-                
+                <img src="images/WHSCalculations.png" alt="WHSCalculations"></img>   
             </div>
             <form id="handicap-calculator" class="form">
                 <table class="table">
@@ -67,7 +66,7 @@
                     </tbody>
                 </table>
                 <div class="buttons">
-                    <button type="submit" class="btn btn-primary btn-lg submit">Get your Handicap!</button>
+                    <button type="submit" class="btn btn-primary btn-lg submit modal-button">Get your Handicap!</button>
                     <button type="button" id="clear-table" class="btn btn-secondary btn-lg">Clear Table</button>   
                 </div>
                 <div class="final-index">
@@ -76,6 +75,13 @@
             </form>    
         </div> 
     </section>
+    <div class="modal">
+        <div class="modal-box">
+            <h3></h3>
+            <button class="close-modal"><i class="fas fa-times"></i></button>
+        </div>
+    </div>
+   
 
     <script type="module" src="scripts/differential-calculator.js"></script>
     <script type="module" src="scripts/test.js"></script>
@@ -85,6 +91,7 @@
     <script type="module" src="scripts/9-hole-combination.js"></script>
     <script type="module" src="scripts/average-calculator.js"></script>
     <script type="module" src="scripts/clear-buttons.js"></script>
+    <script type="module" src="scripts/modal-control.js"></script>
 </body>
 
 </html>

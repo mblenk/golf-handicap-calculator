@@ -14,13 +14,11 @@ handicapCalculator.addEventListener('submit', (e) => {
     }
 
     //Combine two 9-hole scores and round to one decimal place to make an 18 hole differential
-    const test = []
     for(let i = 0; i < length - 1; i += 2) {
         const combined = (nineHoleDiffs[i] + nineHoleDiffs[i+1])
         const rounded = oneDecimalPlace(combined)
         combinedDiffs.push(Number(rounded))
     }
-    console.log(combinedDiffs)
     return combinedDiffs
     
 })
