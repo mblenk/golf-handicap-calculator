@@ -1,4 +1,4 @@
-import { eighteenHoleDiffs } from "./differential-calculator.js";
+import { eighteenHoleDiffs, error } from "./differential-calculator.js";
 import { combinedDiffs } from "./9-hole-combination.js";
 import { average } from "./average-calculator.js";
 import { oneDecimalPlace } from "./oneDecimalPlace.js";
@@ -10,15 +10,26 @@ handicapCalculator.addEventListener('submit', (e) => {
     const finalDifferentials = eighteenHoleDiffs.concat(combinedDiffs)
     
     finalDifferentials.sort((a,b) => a - b)
+    console.log(finalDifferentials)
     
     const diffsCount = finalDifferentials.length
     let handicapIndex = 0
 
     const finalIndex = document.getElementById('final-index')
+    const modalText = document.getElementById('modal-text')
     const modalIndex = document.getElementById('modal-index')
-
+    
     if(diffsCount < 3){
         finalIndex.innerText = '54 holes of scores are required'
+        modalText.innerText = '54 holes of scores are required'
+        modalIndex.innerText = ''
+        return
+    }
+
+    if(error) {
+        modalText.innerText = `${error}`
+        modalIndex.innerText = ''
+        finalIndex.innerText = ''
         return
     }
 
@@ -67,6 +78,6 @@ handicapCalculator.addEventListener('submit', (e) => {
     }
 
     finalIndex.innerText = `Your Handicap Index is: ${handicapIndex}`
-    modalIndex.innerText = `Your Handicap Index is: ${handicapIndex}`
-
+    modalText.innerText = `Your Handicap Index is:`
+    modalIndex.innerText = `${handicapIndex}`
 })

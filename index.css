@@ -14,7 +14,7 @@
     position:fixed;
     width:inherit;
     height:inherit;
-    background-color:rgba(0,0,0,0.80);
+    background-color:rgba(0,0,0,0.85);
 }
 
 /* General Classes */
@@ -37,7 +37,7 @@
     font-size: 25px;
 }
 
-/* Input Form */
+/* Input Forms */
 .content {
     position:relative;
     margin: 0px 0px 0px 20px;
@@ -49,7 +49,7 @@
     margin: 25px 50px 0px 50px;
     width:50%;
 }
-.table thead {
+.table-headings {
     font-size:20px;
     color:white;
     border:none;
@@ -57,9 +57,6 @@
     text-decoration: underline;
     font-family: 'Quicksand', sans-serif;  
 }
-/* .table tr {
-    border:0;
-} */
 .table input {
     width:100px;
     height:30px;
@@ -68,7 +65,6 @@
     display:flex;
     margin: 0px 10px 10px 50px;
     align-items: center;
-    
 }
 .submit {
     margin: 0px 10px 0px 0px;
@@ -80,6 +76,19 @@
     font-size:20px;
     font-family: 'Quicksand', sans-serif;
 }
+.course-hcap input {
+    width: 100px;
+    height: 30px;
+    margin: 10px 0px 0px 0px;
+}
+.course-hcap td {
+    padding:0px 10px 0px 10px;
+}
+#holes {
+    height: 30px;
+    margin: 10px 0px 0px 0px;
+}
+
 
 /* Instructions */
 .instructions {
@@ -91,43 +100,60 @@
 .content img {
     max-width:100%;
 }
+.diffs-graphic {
+    margin-bottom: 10px;
+}
 
-/* The Modal (background) */
+/* Modal */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
   }
-  
-  /* Modal Content/Box */
   .modal-box {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 15% auto; 
     padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    border: 3px solid black;
+    width: 40%; 
+    height: 20%;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    position: relative;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
   }
-  
-  /* The Close Button */
+  #modal-text {
+    font-size:40px;
+    font-weight: bold;
+  }
+  #modal-index {
+      font-size: 50px;
+  }
   .close-modal {
     color:darkred;
     background:transparent;
     border-color: transparent;
+    position:absolute;
+    top: 5%;
+    right: 2%;
+    font-size: 20px;
+    margin-bottom: 20px;
   }
-  
-  /* .close-modal:hover,
+  .close-modal:hover,
   .close-modal:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
-  } */
+  }
 
 
 /* Responsive Media */
@@ -159,9 +185,27 @@
     .form {
         overflow-x: auto;
     }
+    #course-handicap {
+        max-width: 90%;
+        overflow-x: auto;
+    }
     .instructions {
         font-family: 'Quicksand', sans-serif;
     }
+    .modal-box {
+        background-color: #fefefe;
+        margin: 15% auto; 
+        padding: 20px;
+        border: 3px solid black;
+        width: 80%; 
+        height: 40%;
+        border-radius: 10px;
+        display: grid;
+        place-items: center;
+        position: relative;
+        font-family: 'Quicksand', sans-serif;
+        text-align: center;
+      }
 }
 
 
