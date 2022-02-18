@@ -26,43 +26,50 @@
                 <p class="text-color">Although you can calculate a handicap index with just 54 holes of scoring data, the more data you provide the more accurate your handicap will be. Up to 20 scores can be submitted and for each one a "Score Differential" will be calculated. For 9 hole rounds, the differential for each set of 9 holes will be calculated and then two 9 hole rounds will be combined into one 18 hole differential. The handicap index is then calculated as per the table below:</p>
                 <img src="images/WHSCalculations.png" alt="WHSCalculations" class="diffs-graphic"></img>
                 <p class="text-color">The handicap provided by the calculator is just your handicap index and is not the number you should be playing from on the course. The Playing Handicap Calculator below will tailor your handicap to the course you want to play.</p>  
-                <form id="course-handicap">
-                    <table class="course-hcap">
-                        <thead class="table-headings">
-                            <tr>
-                                <th>No. of <br>Holes</th>
-                                <th>Handicap <br>Index</th>
-                                <th>Slope <br>Rating</th>
-                                <th>Course <br>Rating</th>
-                                <th>Course <br>Par</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <select name="holes[]" id="holes">
-                                        <option value="18">18</option>
-                                        <option value="9">9</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <input type="text" name="holes[]" placeholder="18.0">
-                                </td>
-                                <td>
-                                    <input type="text" name="holes[]" placeholder="113">
-                                </td>
-                                <td>
-                                    <input type="text" name="holes[]" placeholder="72">
-                                </td>
-                                <td>
-                                    <input type="text" name="holes[]" placeholder="72">
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <br>
-                    <button class="btn btn-primary modal-course">Submit</button>
-                </form> 
+                <div>
+                    <h4 class="text-color" style="text-decoration: underline;">Course Handicap Calculator</h4>
+                    <form id="course-handicap">
+                        <table class="course-hcap">
+                            <thead class="table-headings">
+                                <tr>
+                                    <th>No. of <br>Holes</th>
+                                    <th>Handicap <br>Index</th>
+                                    <th>Slope <br>Rating</th>
+                                    <th>Course <br>Rating</th>
+                                    <th>Course <br>Par</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <select name="holes[]" id="holes">
+                                            <option value="18">18</option>
+                                            <option value="9">9</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="holes[]" placeholder="18.0">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="holes[]" placeholder="113">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="holes[]" placeholder="72">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="holes[]" placeholder="72">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br>
+                        <div class="course-btn-result">
+                            <button class="btn btn-primary modal-course">Submit</button>
+                            <h4 id="course-handicap-index" class="text-color"></h4>
+                        </div>
+                        
+                    </form> 
+                </div>
             </div>
             <form id="handicap-calculator" class="form">
                 <table class="table">

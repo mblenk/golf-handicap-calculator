@@ -76,6 +76,15 @@
     font-size:20px;
     font-family: 'Quicksand', sans-serif;
 }
+
+#course-handicap {
+    background-color: rgb(161, 161, 161);
+    padding: 30px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    width:65%;
+}
 .course-hcap input {
     width: 100px;
     height: 30px;
@@ -88,6 +97,19 @@
     height: 30px;
     margin: 10px 0px 0px 0px;
 }
+.course-btn-result {
+    display: flex;
+    align-items: center;
+}
+.modal-course {
+    margin-right: 15px;
+}
+#course-handicap-index {
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
 
 
 /* Instructions */
