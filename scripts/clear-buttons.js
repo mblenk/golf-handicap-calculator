@@ -6,7 +6,7 @@ const buttonsArray = Array.from(clearButtons)
 buttonsArray.forEach(button => {
     button.addEventListener('click', (e) => {
         const id = button.id
-        const inputElementValues = document.getElementsByName(`round${id}[]`)
+        const inputElementValues = document.getElementsByName(`round${id}`)
     
         inputElementValues.forEach(node => {
             node.value = ""

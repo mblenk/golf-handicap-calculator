@@ -1,50 +1,68 @@
 import { oneDecimalPlace } from "./oneDecimalPlace.js"
 
-const handicapCalculator = document.forms['handicap-calculator']
-const eighteenHoleDiffs = []
-const nineHoleDiffs = []
-let error = ''
 
-handicapCalculator.addEventListener('submit', (e) => {
-    e.preventDefault()
-    const roundsPlayed = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
-    eighteenHoleDiffs.length = 0 // reset values on each new form submission
-    nineHoleDiffs.length = 0
-    error = ''
+
+const calculateScoreDifferentials = (array, number) => {
+    const [scoreEighteen, scoreNine, slopeRating, courseRating, playingConditions] = array
+
+    if(scoreEighteen || scoreNine === 0) {
+        const type = 18
+        const index = (113 / slopeRating) * (scoreEighteen - courseRating - playingConditions)
+        const rounded = Number(oneDecimalPlace(index))  
+        return [rounded, type]
+    } else if (scoreNine || scoreEighteen === 0) {
+        const type = 9
+        const index = (113 / slopeRating) * (scoreNine - courseRating - (playingConditions / 2))
+        return [index, type]
+    }
     
-    roundsPlayed.forEach(a => {
+}
 
-        const formSubmissionValues = []
-        const round = document.getElementsByName(`round${a}[]`)
+export { calculateScoreDifferentials }
+
+
+
+
+
+//***PREVIOUS CODE***
+
+// const handicapCalculator = document.forms['handicap-calculator']
+// const eighteenHoleDiffs = []
+// const nineHoleDiffs = []
+// let error = ''
+
+// handicapCalculator.addEventListener('submit', (e) => {
+//     e.preventDefault()
+//     eighteenHoleDiffs.length = 0 // reset values on each new form submission
+//     nineHoleDiffs.length = 0
+//     error = ''
     
-        round.forEach(round => {
-            formSubmissionValues.push(round.value)
-        })
-        
-        const scoreEighteen = formSubmissionValues[0]
-        const scoreNine = formSubmissionValues[1]
-        const slopeRating = formSubmissionValues[2]
-        const courseRating = formSubmissionValues[3]
-        const playingConditions = formSubmissionValues[4]
+//     for(let i = 1; i <= 20; i++) {
 
-        // Catch an error if the datafields are not correctly filled in
-        if((scoreEighteen || scoreNine) && (!slopeRating || !courseRating)) {
-           error = `The Slope or Course Rating has not been provided for Round ${a}`
-        }
-        if((slopeRating || courseRating) && (!scoreEighteen && !scoreNine)) {
-            error = `No score has been provided for Round ${a}`
-        }
+//         const round = document.getElementsByName(`round${i}`)
         
-        if(scoreEighteen || scoreNine === 0) {
-            const index = (113 / slopeRating)*(scoreEighteen - courseRating - playingConditions)
-            const rounded = oneDecimalPlace(index)  
-            eighteenHoleDiffs.push(Number(rounded))
-        } else if (scoreNine || scoreEighteen === 0) {
-            const index = (113 / slopeRating)*(scoreNine - courseRating - (playingConditions/2))
-            nineHoleDiffs.push(Number(index)) //9 hole score not rounded until combined with a second 9 hole score
-        }
-        return [eighteenHoleDiffs, nineHoleDiffs, error]
-    })  
-})
+//         const formSubmissionValues = Array.from(round).map(a => a.value) 
+        
+//         const [scoreEighteen, scoreNine, slopeRating, courseRating, playingConditions] = formSubmissionValues
 
-export { eighteenHoleDiffs, nineHoleDiffs, error }
+//         // Catch an error if the datafields are not correctly filled in
+//         if((scoreEighteen || scoreNine) && (!slopeRating || !courseRating)) {
+//            error = `The Slope or Course Rating has not been provided for Round ${a}`
+//         }
+//         if((slopeRating || courseRating) && (!scoreEighteen && !scoreNine)) {
+//             error = `No score has been provided for Round ${a}`
+//         }
+        
+//         if(scoreEighteen || scoreNine === 0) {
+//             const index = (113 / slopeRating) * (scoreEighteen - courseRating - playingConditions)
+//             const rounded = oneDecimalPlace(index)  
+//             eighteenHoleDiffs.push(Number(rounded))
+//         } else if (scoreNine || scoreEighteen === 0) {
+//             const index = (113 / slopeRating) * (scoreNine - courseRating - (playingConditions/2))
+//             nineHoleDiffs.push(Number(index)) //9 hole score not rounded until combined with a second 9 hole score
+//         }
+//     }  
+//     return [eighteenHoleDiffs, nineHoleDiffs, error]
+// })
+
+// export { eighteenHoleDiffs, nineHoleDiffs, error }
