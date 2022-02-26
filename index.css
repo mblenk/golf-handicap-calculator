@@ -40,12 +40,12 @@
 /* Input Forms */
 .content {
     position:relative;
-    margin: 0px 0px 0px 20px;
+    margin: 0px 0px 0px 10px;
     display:flex;
 }
 .table {
     max-width: 600px;
-    margin: 25px 50px 0px 50px;
+    margin: 25px 50px 0px 30px;
     width:50%;
 }
 .table-headings {
@@ -75,11 +75,11 @@
     font-size:20px;
     font-family: 'Quicksand', sans-serif;
 }
-
-#course-handicap {
-    background-color: rgb(161, 161, 161);
+.course-hcap-form {
+    background-color: rgb(26, 26, 26);
     padding: 30px;
     border-radius: 10px;
+    display: flex;
     align-items: center;
     justify-content: center;
     width:100%;
@@ -180,7 +180,7 @@
 
 
 /* Responsive Media */
-@media screen and (max-width:800px) {
+@media screen and (max-width:860px) {
     .background {
         background: url('images/golf-course-mobile.jpeg');
         background-size:cover;
@@ -199,7 +199,7 @@
     }
     .content {
         flex-direction:column;
-        width:100%;
+        width:95%;
         margin:20px 10px 20px 10px;
     }
     .table {
